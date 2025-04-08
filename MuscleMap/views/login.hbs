@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/styles/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <img src="/styles/favicon.png" alt="Muscle Map Logo"> 
+    <div id="registration">
+        <h1>Login to Muscle Map</h1>
+        <form action="/login" method="POST">
+            <div class="mb-3">
+                <label for="userid">Username:</label>
+                <input 
+                    type="text" 
+                    id="userid" 
+                    name="userid" 
+                    required 
+                    placeholder="Enter your username"
+                    style="border: 1px solid #ccc"><br>
+            </div>
+            <div class="mb-3">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password"><br>
+            </div>
+            <!-- Error message below the password field -->
+            {{#if error}}
+            <p style="color: red; font-size: 14px;">{{error}}</p>
+            {{/if}}
+            <button type="submit">Sign in</button>
+        </form>
+        <br>
+        <a href="/register">New user? Register here.</a>
+    </div>
+</body>
+</html>

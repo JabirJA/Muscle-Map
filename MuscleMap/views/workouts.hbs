@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/styles/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/styles2.css">
+    <title>Your Workouts</title>
+</head>
+<body>
+    <div class="user_info">
+        <h1>Welcome {{userid}}!</h1>
+        <br>
+        <table id="workout-table">
+            <tr>
+                <td><strong>Current Weight:</strong></td>
+                <td id="current-weight">{{weight}} lbs</td>
+            </tr>
+            <tr>
+                <td><strong>BMI:</strong></td>
+                <td id="bmi">{{bmi}} - {{bmiCategory}}</td>
+            </tr>
+            <tr>
+                <td><strong>BMR:</strong></td>
+                <td id="bmr">{{bmr}} kcal/day</td>
+            </tr>
+            <tr>
+                <td><strong>Body Fat Percentage:</strong></td>
+                <td id="body-fat">{{bodyFatPercent}}%</td>
+            </tr>
+            <tr>
+                <td><strong>Fitness Goals:</strong></td>
+                <td id="fitness-goals-text" data-goals="{{ fitness_goals }}">{{ fitness_goals }}</td>
+
+            </tr>
+        </table>
+        <br><br>
+        <button id="fit-goals">Change Fitness Goals</button> 
+        <button id="update-weight">Update Weight</button>
+        <img src="/styles/favicon.png" alt="Muscle Map Logo">
+        <button id="add-workouts">Add Workouts</button>
+        <button id="logout-btn">Logout</button>
+    </div>
+
+    <div class="workouts">
+        <h2>Your Muscle Map Workouts</h2>
+        <table id="your-workouts-table">
+            <thead>
+                <tr>
+                    <th>Exercise Name</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th>Remove</th>
+                    <th class="description">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Muscle Map workouts will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+  <div class="rec-workouts">
+    <h2>Recommended</h2>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="spinner" style="display: none;"></div>
+
+    <table id="recommended-workouts-table">
+        <thead>
+            <tr>
+                <th>Exercise Name</th>
+                <th>Add</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Recommended workouts will be inserted here -->
+        </tbody>
+    </table>
+    <br>
+    <button id="hide-workouts">Hide Workouts</button>
+</div>
+
+    <script src="/js/tables.js" defer></script>
+    <script type="module" src="/js/button.js"></script>
+
+
+</body>
+</html>
